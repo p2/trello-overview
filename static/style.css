@@ -21,7 +21,8 @@ footer { padding: 2em; text-align: center; font-size: 0.85em; }
 .bigcenter { margin: 10em auto; text-align: center; }
 
 #boards { display: -webkit-box; display: -moz-box; display: box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; -webkit-flex-flow: row wrap; -moz-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: distribute; -moz-box-pack: distribute; box-pack: distribute; -webkit-justify-content: space-around; -moz-justify-content: space-around; -ms-justify-content: space-around; -o-justify-content: space-around; justify-content: space-around; -ms-flex-pack: distribute; max-width: 80%; margin: 0 auto; padding: 2em; }
-#boards .board { max-height: 50%; margin-right: 1em; width: 20em; max-width: h2; max-width-word-break: break-all; max-width-word-break: break-word; max-width--webkit-hyphens: auto; max-width--moz-hyphens: auto; max-width--ms-hyphens: auto; max-width-hyphens: auto; }
+#boards .board { width: 20em; margin: 0 1em 2em 0; }
+#boards .board h2 { word-break: break-all; word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
 #boards .board h4 { margin-top: -1em; }
 #boards .board h4 i, #boards .board h4 a:link, #boards .board h4 a:visited { color: #707070; }
 #boards .board .card { margin: 0 0 1em; }
