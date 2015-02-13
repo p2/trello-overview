@@ -14,6 +14,8 @@ a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:visited { text-decoration-style: dotted; }
 
+footer { padding: 2em; text-align: center; font-size: 0.85em; }
+
 .loggedin { display: none; }
 
 .bigcenter { margin: 10em auto; text-align: center; }

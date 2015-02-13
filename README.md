@@ -2,7 +2,7 @@ Trello Card Overview
 ====================
 
 Simple JavaScript web app that pulls all cards that you are a member of, by board, and lists them by due date (if any).
-Very very basic at the moment.
+Very very basic at the moment, you can test a [hosted version here](http://trello.ossus.ch/me/).
 
 API Key
 -------
