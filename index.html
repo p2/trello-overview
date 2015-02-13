@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trello Overview</title>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Neuton">
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+	<header>
+		<div class="loggedin">
+			Hi <span id="fullName"></span>
+			<button onclick="logout()">Logout</button>
+		</div>
+		<div class="loggedout">
+			<button onclick="login()">Connect to Trello</button>
+		</div>
+	</header>
+	
+	<div class="loggedout bigcenter">
+		<a href="javascript:login()">Connect To Trello</a>
+	</div>
+	
+	<script id="template" type="x-tmpl-mustache">
+	{{#boards}}
+	<div id="board_{{ id }}" class="board">
+		<h2 class="boardname">~</h2>
+		<h4 class="orgname">~</h4>
+		{{#cards}}
+		<div id="card_{{ id }}" class="card">
+			<h3 title="{{ desc }}"><a href="{{ url }}" target="_blank">{{ name }}</a></h3>
+			{{#due}}
+			<span class="due">Due {{ dueDate }}</span>
+			{{/due}}
+		</div>
+		{{/cards}}
+	</div>
+	{{/boards}}
+	</script>
+	<div id="boards" class="loggedin"></div>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="//api.trello.com/1/client.js?key=YOUR_API_KEY_HERE"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+	<script src="static/main.js"></script>
+	<script>
+	$(document).ready(launchApp);
+	</script>
+</body>
+</html>

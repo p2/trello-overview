@@ -1,0 +1,87 @@
+/**
+ *  Styles for trello-overview.
+ */
+
+@import "Bourbon";
+
+$maincolor:			rgb(38,173,228);
+$darkcolor:			rgb(112,112,112);
+$backcolor:			white;
+
+
+html, body {
+	height: 100%; margin: 0; padding: 0;
+	background-color: $backcolor;
+}
+body {
+	font: normal 400 12pt/1.4 "Georgia Pro", Georgia, serif;
+}
+header {
+	padding: 1em 2em;
+	text-align: right;
+	
+	button {
+		margin-left: 1em;
+	}
+}
+h1, h2, h3, h4, h5 {
+	font-family: Neuton, serif; font-weight: 500;
+}
+p {
+	margin: 0.75em 0 0;
+}
+a {
+	text-decoration: none;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+	&:visited {
+		text-decoration-style: dotted;
+	}
+}
+
+
+.loggedin {
+	display: none;
+}
+.bigcenter {
+	margin: 10em auto;
+	text-align: center;
+}
+
+#boards {
+	@include display(flex);
+	@include flex-flow(row wrap);
+	@include justify-content(space-around);
+	max-width: 80%;
+	margin: 0 auto; padding: 2em;
+	
+	.board {
+		// @include flex(1);		// doesn't work when wrapping
+		max-height: 50%;
+		margin-right: 1em;
+		width: 20em; max-width:
+		
+		h2 {
+			word-break: break-all; word-break: break-word; @include hyphens(auto);
+		}
+		h4 {
+			margin-top: -1em;
+			i, a:link, a:visited {
+				color: $darkcolor;
+			}
+		}
+		.card {
+			margin: 0 0 1em;
+			
+			h3 {
+				margin: 0 0 0.25em;
+			}
+			.due {
+				font-size: 0.85em;
+				color: rgb(234,148,138)
+			}
+		}
+	}
+}
