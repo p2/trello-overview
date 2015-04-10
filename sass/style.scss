@@ -5,6 +5,7 @@
 @import "Bourbon";
 
 $maincolor:			rgb(38,173,228);
+$linkcolor:			rgb(0, 121, 191);
 $darkcolor:			rgb(112,112,112);
 $backcolor:			white;
 
@@ -31,7 +32,7 @@ p {
 	margin: 0.75em 0 0;
 }
 a {
-	text-decoration: none;
+	text-decoration: none; color: $linkcolor;
 	
 	&:hover {
 		text-decoration: underline;
@@ -73,6 +74,11 @@ footer {
 			margin-top: -1em;
 			i, a:link, a:visited {
 				color: $darkcolor;
+			}
+		}
+		.boardname a {
+			&:link, &:visited {
+				color: black;
 			}
 		}
 		.card {

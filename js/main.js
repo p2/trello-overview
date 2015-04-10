@@ -98,8 +98,10 @@ function loadBoardAttributes(boards) {
 			{fields: 'id,name,shortUrl,idOrganization,prefs'},
 			function(data, status, xhr) {
 				var brd = $('#board_'+data.id);
-				brd.find('.boardname').text(data.name);
 				brd.find('a').css('color', data.prefs.backgroundColor);
+				
+				var brdLink = $('<a>').text(data.name).attr('href', data.shortUrl).attr('target', '_blank');
+				brd.find('.boardname').empty().append(brdLink);
 				
 				if (data.idOrganization) {
 					brd.find('.orgname').addClass('org_'+data.idOrganization)
