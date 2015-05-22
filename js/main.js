@@ -24,6 +24,14 @@ function onAuthorize() {
 			parent.empty().append(rendered);
 			loadBoardAttributes(boards);
 		});
+	},
+	function(xhr, status, error) {
+		// we end up here if we call Trello.authorize with interactive = false
+		// need to force a logout and then do a login to see our cards
+		if (error && "unauthorized" == error.toLowerCase()) {
+			logout();
+			login();
+		}
 	});
 }
 
