@@ -11,6 +11,7 @@ function launchApp() {
 
 function onAuthorize() {
 	updateLoggedIn();
+	scheduleRefresh();
 	var parent = $('#boards');
 	parent.empty().append($('<p>').addClass('bigcenter').text("Loading Cards..."));
 	
@@ -51,6 +52,31 @@ function login() {
 function logout() {
 	Trello.deauthorize();
 	updateLoggedIn();
+}
+
+
+// MARK: - Auto-Refresh
+
+var _refreshDelaySecs = 1800;
+var _refreshTimeout = null
+
+function scheduleRefresh() {
+	clearRefresh();
+	if (_refreshDelaySecs > 0) {
+		_refreshTimeout = window.setTimeout(doRefresh, _refreshDelaySecs*1000);
+	}
+}
+
+function doRefresh() {
+	clearRefresh();
+	onAuthorize();
+}
+
+function clearRefresh() {
+	if (_refreshTimeout) {
+		window.clearTimeout(_refreshTimeout);
+		_refreshTimeout = null;
+	}
 }
 
 
